@@ -97,8 +97,10 @@ main {
 }
 
 .forecast-icon {
-  text-align: center;
-  font-size: 25px;
+  width: 85px;
+  height: 85px;
+  display: block;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
 
