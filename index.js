@@ -59,7 +59,7 @@ function handleSearchSubmit(event) {
 
 function getForecast(city) {
   let apiKey = "09e7cf3bbc5aa1ao49a9ct04cebc4d31";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=immperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -71,7 +71,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHtml = "";
@@ -88,9 +87,7 @@ function displayForecast(response) {
         <div class="forecast-temp"><strong>${Math.round(
           day.temperature.maximum
         )}°</strong></div>
-        <div class="forecast-temp"><strong>${Math.round(
-          day.temperature.minimum
-        )}°</strong></div>
+        <div class="forecast-temp">${Math.round(day.temperature.minimum)}°</div>
      </div>
 </div>`;
   });
